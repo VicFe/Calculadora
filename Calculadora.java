@@ -10,15 +10,11 @@ public class Main {
 		//Variaveis//
 		double num1, num2;
 		String operacao1;
-		String operacao2;
 		
 		//Calculadora//
 		System.out.println("Digite o operador que vocé deseja utilizar no calculo:");
-		System.out.println("Sendo os operadores: Soma(+), Subtração(-), Multiplicação(*), Divisão (/) e Outros (#)");
+		System.out.println("Sendo os operadores: Soma(+), Subtração(-), Multiplicação(*) e Divisão (/). Outros: Potencia (^) mais em breve)");
 		operacao1 = ler.nextLine();
-		
-		System.out.println("Operadores especiais: Potencia (^) e Porcentagem (%)");
-		operacao2 = ler.nextLine();
 		
 		System.out.println("Digite o primeiro valor:");
 		num1 = ler.nextDouble();
@@ -27,17 +23,11 @@ public class Main {
 		
 		//Estrutura de controle//
 		switch (operacao1) {
-			case "+": System.out.printf("A soma deu: %.2f",num1+num2); break;
-			case "-": System.out.printf("A subtração deu: %.2f",num1-num2); break;
-			case "*": System.out.printf("A multiplicação deu: %.2f",num1*num2); break;
-			case "/": System.out.printf("A divisão deu: %.2f",num1/num2); break;
-			default: System.out.println("Operação invalida"); break;
-		}
-		
-		//Estrutura de controle//
-		switch (operacao2) {
-			case "^": System.out.printf("A potenciação é: %.2f",Math.pow(num1, num2)); break;
-			case "%": System.out.printf("A porcentagem é: %.2f",num1/100); break;
+			case "+": System.out.printf("%.1f + %.1f: %.2f",num1,num2,num1+num2); break;
+			case "-": System.out.printf("%.1f - %.1f: %.2f",num1,num2,num1-num2); break;
+			case "*": System.out.printf("%.1f * %.1f: %.2f",num1,num2,num1*num2); break;
+			case "/": System.out.printf("%.1f / %.1f: %.2f",num1,num2,num1/num2); break;
+			case "^": System.out.printf("%.1f ^ %.1f: %.2f",num1,num2,Math.pow(num1, num2)); break;
 			default: System.out.println("Operação invalida"); break;
 		}
 		ler.close();
